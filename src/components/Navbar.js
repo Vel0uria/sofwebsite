@@ -1,27 +1,25 @@
 import React from "react"
-import AppBar from "@mui/material/AppBar"
-import { makeStyles } from "@mui/styles"
-import { fontWeight, padding } from "@mui/system"
-
-const useStyles = makeStyles(() => ({
-  root: {
-    padding: 4
-  }
-}))
+import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material"
 
 function NavBar() {
-  const classes = useStyles()
   return (
-    <AppBar
-      sx={{
-        padding: 3,
-        backgroundColor: "Gainsboro",
-        color: "Black",
-        fontSize: "1.7rem",
-        fontWeight: "bold"
-      }}
-    >
-      Sofía De la Cueva
+    <AppBar sx={{ padding: 1, backgroundColor: "Gainsboro", color: "Black" }}>
+      <Toolbar>
+        <Typography variant="h6" noWrap component="div">
+          LOGO
+        </Typography>
+        <Box component="div" pl={10}>
+          <Button size="large" color="inherit">
+            BIO
+          </Button>
+          <Button size="large" color="inherit">
+            Statement
+          </Button>
+          <Button size="large" color="inherit">
+            Contacto
+          </Button>
+        </Box>
+      </Toolbar>
     </AppBar>
   )
 }
