@@ -13,3 +13,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.logo {
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+@keyframes example {
+  from {
+    margin: -280px;
+    margin-top: 20px;
+  }
+  to {
+    margin: -45px;
+    margin-top: 20px;
+  }
+}
