@@ -1,6 +1,6 @@
 import React from "react"
 import "animate.css"
-import Animate from "animate.css-react"
+//import Animate from "animate.css-react"
 import { Typography, Box } from "@mui/material"
 import logoLeft from "../assets/prueba_web.png"
 import logoRight from "../assets/prueba_web2.png"
@@ -13,23 +13,13 @@ const useStyles = makeStyles({
     width: "auto",
     animationName: "example",
     animationDuration: "1s",
-    margin: -45,
-    marginTop: [20, "!important"]
-  },
-  test: {
-    animation: "2s animate__fadeIn",
-    // animationDuration: "2s",
-    color: "#4d4d4d",
-    paddingTop: 242
-  },
-  "@keyframes example": {
-    from: { margin: -280, marginTop: 20 },
-    to: { margin: -45, marginTop: 20 }
+    margin: -35,
+    marginTop: [10, "!important"]
   },
 
-  "@keyframes example1": {
-    from: { margin: -280, marginTop: 20 },
-    to: { margin: -45, marginTop: 20 }
+  "@keyframes example": {
+    from: { margin: -280, marginTop: 10 },
+    to: { margin: -35, marginTop: 10 }
   }
 })
 
@@ -48,12 +38,16 @@ function Home() {
       <img alt="logo-left" src={logoLeft} className={classes.logo} />
       <Typography
         variant="h1"
-        align="center" // color: "#4d4d4d", //sx={{
-        //   pt: 20
-        // }}
-        className={classes.test}
+        align="center"
+        sx={{
+          pt: 30,
+          color: "#276e5c",
+          fontFamily: "Cinzel Decorative"
+          // fontStyle: "italic"
+        }}
+        className="animate__animated animate__fadeIn animate__slower 2s"
       >
-        SOFÍA DE LA CUEVA
+        Sofía De la Cueva
       </Typography>
       <img alt="logo-right" src={logoRight} className={classes.logo} />
     </Box>
