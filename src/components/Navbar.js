@@ -24,7 +24,13 @@ function NavBar() {
             Statement
           </Button>
           <Button size="large" color="inherit">
-            Contacto
+            Shop
+          </Button>
+          <Button size="large" color="inherit">
+            Press
+          </Button>
+          <Button size="large" color="inherit">
+            Contact
           </Button>
         </Box>
       </Toolbar>
