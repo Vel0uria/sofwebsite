@@ -24,7 +24,7 @@ function NavBar() {
             Statement
           </Button>
           <Button size="large" color="inherit">
-            Shop
+            Shop / NFTs
           </Button>
           <Button size="large" color="inherit">
             Press
