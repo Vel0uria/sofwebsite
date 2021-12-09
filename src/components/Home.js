@@ -7,6 +7,9 @@ import logoLeft from "../assets/prueba_web.png"
 import logoRight from "../assets/prueba_web2.png"
 import gif from "../assets/gifs/star_text.jpg"
 import orosangre from "../assets/orosangre/project-v.png"
+import delirium from "../assets/delirium/letras.jpg"
+import entelequias from "../assets/entelequias/stories.png"
+import loteria from "../assets/loteria/soles.jpg"
 import { makeStyles } from "@mui/styles"
 import { createTheme } from "@mui/material/styles"
 const theme = createTheme()
@@ -29,15 +32,30 @@ const useStyles = makeStyles(() => ({
     backgroundImage: `url(${gif})`,
     backgroundSize: "cover",
     backgroundPosition: "top",
-    height: 250,
-    "& img": { opacity: 0.4 }
+    height: 300
+  },
+  entelequias: {
+    backgroundImage: `url(${entelequias})`,
+    // backgroundSize: "cover",
+    backgroundPosition: "top",
+    height: 300
+  },
+  delirium: {
+    backgroundImage: `url(${delirium})`,
+    backgroundSize: "cover",
+    height: 300
   },
   orosangre: {
     backgroundImage: `url(${orosangre})`,
     backgroundSize: "cover",
     backgroundPosition: "bottom",
-    height: 250,
-    "& img": { opacity: 0.4 }
+    height: 300
+  },
+  loteria: {
+    backgroundImage: `url(${loteria})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: 300
   },
   "@keyframes example": {
     from: { margin: -280, marginTop: 4 },
@@ -88,25 +106,19 @@ function Home() {
           GIFs
         </Typography>
       </Box>
-      <Box component="div">
+
+      <Box component="div" mt={10} className={classes.delirium}>
         <Divider color="black" />
-        <Typography variant="h2" align="center" pt={13}>
-          TESIS: ENTELEQUIAS
-        </Typography>
-      </Box>
-      <Box component="div">
-        <Divider color="black" />
-        <Typography variant="h2" align="center" pt={13}>
+        <Typography
+          variant="h2"
+          align="center"
+          pt={13}
+          sx={{ fontWeight: "bold", color: "black" }}
+        >
           DELIRIUM
         </Typography>
       </Box>
-      <Box component="div">
-        <Divider color="black" />
-        <Typography variant="h2" align="center" pt={13}>
-          TAROT ALGORÍTMICO
-        </Typography>
-      </Box>
-      <Box component="div" mt={30} className={classes.orosangre}>
+      <Box component="div" mt={10} className={classes.orosangre}>
         <Divider color="black" />
         <Typography
           variant="h2"
@@ -117,10 +129,32 @@ function Home() {
           ORO Y SANGRE
         </Typography>
       </Box>
-      <Box component="div">
+      <Box component="div" mt={10} className={classes.loteria}>
+        <Divider color="black" />
+        <Typography
+          variant="h2"
+          align="center"
+          pt={13}
+          sx={{ fontWeight: "bold", color: "black" }}
+        >
+          LOTERÍA
+        </Typography>
+      </Box>
+      <Box component="div" mt={10} className={classes.entelequias}>
+        <Divider color="black" />
+        <Typography
+          variant="h2"
+          align="center"
+          pt={13}
+          sx={{ fontWeight: "bold", color: "black" }}
+        >
+          ENTELEQUIAS
+        </Typography>
+      </Box>
+      <Box component="div" mt={10}>
         <Divider color="black" />
         <Typography variant="h2" align="center" pt={13}>
-          LOTERÍA
+          TAROT ALGORÍTMICO
         </Typography>
       </Box>
     </div>
