@@ -9,6 +9,8 @@ import gif from "../assets/gifs/star_text.jpg"
 import orosangre from "../assets/orosangre/project-v.png"
 import delirium from "../assets/delirium/letras.jpg"
 import entelequias from "../assets/entelequias/stories.png"
+import tarot from "../assets/tarot/lune.png"
+
 import loteria from "../assets/loteria/soles.jpg"
 import { makeStyles } from "@mui/styles"
 import { createTheme } from "@mui/material/styles"
@@ -53,6 +55,12 @@ const useStyles = makeStyles(() => ({
   },
   loteria: {
     backgroundImage: `url(${loteria})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: 300
+  },
+  tarot: {
+    backgroundImage: `url(${tarot})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: 300
@@ -151,10 +159,15 @@ function Home() {
           ENTELEQUIAS
         </Typography>
       </Box>
-      <Box component="div" mt={10}>
+      <Box component="div" mt={10} className={classes.tarot}>
         <Divider color="black" />
-        <Typography variant="h2" align="center" pt={13}>
-          TAROT ALGORÍTMICO
+        <Typography
+          variant="h2"
+          align="center"
+          pt={13}
+          sx={{ fontWeight: "bold" }}
+        >
+          FRACTALES
         </Typography>
       </Box>
     </div>
