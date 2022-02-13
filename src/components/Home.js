@@ -1,8 +1,9 @@
 import React from "react"
 import "animate.css"
-//import Animate from "animate.css-react"
 import { Typography, Box, Divider } from "@mui/material"
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown"
 //import { Link } from "react-router-dom"
+
 import logoLeft from "../assets/prueba_web.png"
 import logoRight from "../assets/prueba_web2.png"
 import gif from "../assets/gifs/star_text.jpg"
@@ -10,10 +11,10 @@ import orosangre from "../assets/orosangre/project-v.png"
 import delirium from "../assets/delirium/letras.jpg"
 import entelequias from "../assets/entelequias/stories.png"
 import tarot from "../assets/tarot/lune.png"
-
 import loteria from "../assets/loteria/soles.jpg"
 import { makeStyles } from "@mui/styles"
 import { createTheme } from "@mui/material/styles"
+
 const theme = createTheme()
 const useStyles = makeStyles(() => ({
   logo: {
@@ -31,35 +32,54 @@ const useStyles = makeStyles(() => ({
     }
   },
   gif: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundImage: `url(${gif})`,
     backgroundSize: "cover",
     backgroundPosition: "top",
     height: 300
   },
   entelequias: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundImage: `url(${entelequias})`,
     // backgroundSize: "cover",
     backgroundPosition: "top",
     height: 300
   },
   delirium: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundImage: `url(${delirium})`,
+    //backgroundColor: `fade(#FFFFFF, 70%)`,
     backgroundSize: "cover",
     height: 300
   },
   orosangre: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundImage: `url(${orosangre})`,
     backgroundSize: "cover",
     backgroundPosition: "bottom",
     height: 300
   },
   loteria: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundImage: `url(${loteria})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: 300
   },
   tarot: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundImage: `url(${tarot})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -71,7 +91,7 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-//PENDIENTES: Desplegar animación en pantalla completa y expandir proyectos mediante click en ícono
+//PENDIENTES: Tipografía, box Works con arrowDown
 
 function Home() {
   const classes = useStyles()
@@ -94,78 +114,129 @@ function Home() {
           sx={{
             pt: { xs: 10, sm: 16, md: 20, lg: 26, xl: 35 },
             color: "#2b885d",
-            fontFamily: "Cinzel Decorative",
+            fontWeight: 800,
             fontSize: { xs: 20, sm: 50, md: 70, lg: 80, xl: 100 }
           }}
           className="animate__animated animate__fadeIn animate__slower 2s"
         >
-          Sofía De la Cueva
+          SOFÍA DE LA CUEVA
         </Typography>
         <img alt="logo-right" src={logoRight} className={classes.logo} />
       </Box>
-      <Box component="div" mt={30} className={classes.gif}>
+      <Box
+        component="div"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexFlow: "column wrap"
+        }}
+      >
+        <Typography
+          variant="subtitle1"
+          color="darkviolet"
+          sx={{ fontSize: { lg: 18, xl: 20 } }}
+        >
+          WORK
+        </Typography>
+        <KeyboardDoubleArrowDownIcon
+          sx={{
+            color: "darkviolet"
+          }}
+        />
+      </Box>
+      <Box component="div" mt={20} className={classes.gif}>
         <Divider color="black" />
         <Typography
           variant="h2"
           align="center"
           pt={13}
-          sx={{ fontWeight: "bold" }}
+          sx={{
+            fontWeight: "bold",
+            padding: 1,
+            borderRadius: 1,
+            color: "grey",
+            backgroundColor: "rgba(20,20,20,50%)"
+          }}
         >
           GIFs
         </Typography>
       </Box>
-
-      <Box component="div" mt={10} className={classes.delirium}>
+      <Box component="div" mt={5} className={classes.delirium}>
         <Divider color="black" />
         <Typography
           variant="h2"
-          align="center"
-          pt={13}
-          sx={{ fontWeight: "bold", color: "black" }}
+          sx={{
+            fontWeight: "bold",
+            padding: 1,
+            borderRadius: 1,
+            color: "grey",
+            backgroundColor: "rgba(20,20,20,50%)"
+          }}
         >
           DELIRIUM
         </Typography>
       </Box>
-      <Box component="div" mt={10} className={classes.orosangre}>
+      <Box component="div" mt={5} className={classes.orosangre}>
         <Divider color="black" />
         <Typography
           variant="h2"
           align="center"
-          pt={13}
-          sx={{ fontWeight: "bold" }}
+          sx={{
+            fontWeight: "bold",
+            padding: 1,
+            borderRadius: 1,
+            color: "grey",
+            backgroundColor: "rgba(20,20,20,50%)"
+          }}
         >
           ORO Y SANGRE
         </Typography>
       </Box>
-      <Box component="div" mt={10} className={classes.loteria}>
+      <Box component="div" mt={5} className={classes.loteria}>
         <Divider color="black" />
         <Typography
           variant="h2"
           align="center"
-          pt={13}
-          sx={{ fontWeight: "bold", color: "black" }}
+          sx={{
+            fontWeight: "bold",
+            color: "grey",
+            padding: 1,
+            borderRadius: 1,
+            backgroundColor: "rgba(20,20,20,50%)"
+          }}
         >
           LOTERÍA
         </Typography>
       </Box>
-      <Box component="div" mt={10} className={classes.entelequias}>
+      <Box component="div" mt={5} className={classes.entelequias}>
         <Divider color="black" />
         <Typography
           variant="h2"
           align="center"
-          pt={13}
-          sx={{ fontWeight: "bold", color: "black" }}
+          sx={{
+            fontWeight: "bold",
+            color: "grey",
+            padding: 1,
+            borderRadius: 1,
+            backgroundColor: "rgba(20,20,20,50%)"
+          }}
         >
           ENTELEQUIAS
         </Typography>
       </Box>
-      <Box component="div" mt={10} className={classes.tarot}>
+      <Box component="div" mt={5} className={classes.tarot}>
         <Divider color="black" />
         <Typography
           variant="h2"
           align="center"
-          pt={13}
-          sx={{ fontWeight: "bold" }}
+          sx={{
+            fontWeight: "bold",
+            color: "grey",
+            padding: 1,
+            borderRadius: 1,
+            backgroundColor: "rgba(20,20,20,50%)"
+          }}
         >
           FRACTALES
         </Typography>
