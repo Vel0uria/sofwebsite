@@ -2,8 +2,7 @@ import React from "react"
 import "animate.css"
 import { Typography, Box, Divider } from "@mui/material"
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown"
-//import { Link } from "react-router-dom"
-
+import { Link } from "react-router-dom"
 import logoLeft from "../assets/prueba_web.png"
 import logoRight from "../assets/prueba_web2.png"
 import gif from "../assets/gifs/star_text.jpg"
@@ -85,6 +84,10 @@ const useStyles = makeStyles(() => ({
     backgroundPosition: "center",
     height: 300
   },
+  textLink: {
+    color: "inherit",
+    textDecoration: "inherit"
+  },
   "@keyframes example": {
     from: { margin: -280, marginTop: 4 },
     to: { margin: -35, marginTop: 4 }
@@ -139,28 +142,26 @@ function Home() {
         >
           WORK
         </Typography>
-        <KeyboardDoubleArrowDownIcon
-          sx={{
-            color: "darkviolet"
-          }}
-        />
+        <KeyboardDoubleArrowDownIcon sx={{ color: "darkviolet" }} />
       </Box>
       <Box component="div" mt={20} className={classes.gif}>
         <Divider color="black" />
-        <Typography
-          variant="h2"
-          align="center"
-          pt={13}
-          sx={{
-            fontWeight: "bold",
-            padding: 1,
-            borderRadius: 1,
-            color: "grey",
-            backgroundColor: "rgba(20,20,20,50%)"
-          }}
-        >
-          GIFs
-        </Typography>
+        <Link to="/gifs" className={classes.textLink}>
+          <Typography
+            variant="h2"
+            align="center"
+            pt={13}
+            sx={{
+              fontWeight: "bold",
+              padding: 1,
+              borderRadius: 1,
+              color: "grey",
+              backgroundColor: "rgba(20,20,20,50%)"
+            }}
+          >
+            GIFs
+          </Typography>
+        </Link>
       </Box>
       <Box component="div" mt={5} className={classes.delirium}>
         <Divider color="black" />
