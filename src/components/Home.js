@@ -5,7 +5,7 @@ import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrow
 import { Link } from "react-router-dom"
 import logoLeft from "../assets/prueba_web.png"
 import logoRight from "../assets/prueba_web2.png"
-import gif from "../assets/gifs/star_text.jpg"
+import gif from "../assets/gifs/thumbnails/star_text.jpg"
 import orosangre from "../assets/orosangre/project-v.png"
 import delirium from "../assets/delirium/letras.jpg"
 import entelequias from "../assets/entelequias/stories.png"

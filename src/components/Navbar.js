@@ -1,6 +1,6 @@
 import React from "react"
 import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material"
-
+import { Link } from "react-router-dom"
 function NavBar() {
   return (
     <AppBar
@@ -13,9 +13,12 @@ function NavBar() {
       }}
     >
       <Toolbar>
-        <Typography variant="h6" noWrap component="div">
-          LOGO
-        </Typography>
+        <Link to="/">
+          <Typography variant="h6" noWrap component="div">
+            LOGO
+          </Typography>
+        </Link>
+
         <Box component="div" pl={10}>
           <Button size="large" color="inherit">
             BIO
