@@ -165,18 +165,20 @@ function Home() {
       </Box>
       <Box component="div" mt={5} className={classes.delirium}>
         <Divider color="black" />
-        <Typography
-          variant="h2"
-          sx={{
-            fontWeight: "bold",
-            padding: 1,
-            borderRadius: 1,
-            color: "grey",
-            backgroundColor: "rgba(20,20,20,50%)"
-          }}
-        >
-          DELIRIUM
-        </Typography>
+        <Link to="/delirium" className={classes.textLink}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontWeight: "bold",
+              padding: 1,
+              borderRadius: 1,
+              color: "grey",
+              backgroundColor: "rgba(20,20,20,50%)"
+            }}
+          >
+            DELIRIUM
+          </Typography>
+        </Link>
       </Box>
       <Box component="div" mt={5} className={classes.orosangre}>
         <Divider color="black" />
