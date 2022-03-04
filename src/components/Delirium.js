@@ -2,54 +2,104 @@ import React from "react"
 import { Box, Typography, Paper } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import ImageGallery from "react-image-gallery"
-import dialogo from "../assets/delirium/hongos.jpg"
-import psylocibe from "../assets/delirium/hongos 2.jpg"
+import dialogo from "../assets/delirium/dialogo.jpg"
+import psylocibe from "../assets/delirium/hongos_3.jpg"
 import del from "../assets/delirium/s-dialogo.png"
-import picapiojos from "../assets/delirium/picapiojos2.jpg"
+import picapiojos from "../assets/delirium/picapiojos_reduced.png"
+import delirium_t from "../assets/gifs/thumbnails/s-dialogo.png"
+import caleidociclo_t from "../assets/delirium/caleidociclo.png"
 
 //PENDIENTES: Subir video caleidociclo
-
+//Imágenes menos enoormes...
 const useStyles = makeStyles({
   root: {
     display: "flex",
     flexFlow: "column nowrap",
     alignItems: "center",
-    marginTop: 100
+    marginTop: 150
     //  paddingTop: 10
   }
 })
 function Delirium() {
   const classes = useStyles()
-  const Del = () => {
+  const caleidociclo = "https://player.vimeo.com/video/317075295?h=b14298638e"
+
+  const Psylocibe = () => {
+    return (
+      <Box
+        sx={{
+          textAlign: "left",
+          position: "static !important"
+        }}
+      >
+        <Typography variant="h6">Psylocibe</Typography>
+        <Typography>digital collage</Typography>
+        <Typography>1200 x 546 px</Typography>
+        <Typography>2019</Typography>
+      </Box>
+    )
+  }
+
+  const Dialogo = () => {
     return (
       <Box sx={{ textAlign: "left" }}>
         <Typography align="center" variant="h6">
-          Delirium
+          Diálogo entre psylocibes
         </Typography>
-        <Typography>animated GIF</Typography>
-        <Typography>400 x 1050 px</Typography>
-        <Typography>2020</Typography>
+        <Typography>digital collage</Typography>
+        <Typography>1000 x 667 px</Typography>
+        <Typography>2019</Typography>
       </Box>
+    )
+  }
+
+  function renderVideo() {
+    return (
+      <div>
+        <iframe
+          src="https://player.vimeo.com/video/317075295?h=b14298638e"
+          width="640"
+          height="564"
+          frameBorder="0"
+          allow="autoplay; fullscreen"
+          allowFullScreen
+          title="caleidociclo"
+        />
+      </div>
     )
   }
   const images = [
     {
+      original: psylocibe,
+      thumbnail: psylocibe,
+      originalWidth: 950,
+      originalHeight: 602,
+      description: <Psylocibe />
+    },
+    {
       original: dialogo,
       thumbnail: dialogo,
-      originalWidth: 1050,
-      originalHeight: 902
+      originalWidth: 950,
+      originalHeight: 702,
+      description: <Dialogo />
     },
-    { original: psylocibe, thumbnail: psylocibe, description: <Del /> },
-    { original: del, thumbnail: del },
+    { original: del, thumbnail: delirium_t, originalHeight: 750 },
     {
       original: picapiojos,
-      thumbnail: picapiojos
+      thumbnail: picapiojos,
+      originalWidth: 800,
+      originalHeight: 800
+    },
+    {
+      original: caleidociclo,
+      thumbnail: caleidociclo_t,
+      renderItem: renderVideo.bind(caleidociclo)
     }
-  ]
+  ] //   embedUrl: "https://player.vimeo.com/video/317075295?h=b14298638e",
 
   return (
     <div className={classes.root}>
-      <ImageGallery items={images} showPlayButton={false} />
+      <ImageGallery items={images} showPlayButton={false} showNav={false} />
 
       <Box
         sx={{
@@ -68,14 +118,11 @@ function Delirium() {
           }}
         >
           <Typography variant="h6" align="justify" color="gray">
-            La hipnosis que provoca el gif animado proviene de su relación
-            intrínseca con el mito del eterno retorno, que simboliza el
-            mecanismo universal en el cual nos encontramos inmersos, donde
-            alejarse implica regresar, soñar implica despertar y morir es
-            renacer. De igual manera, la estructura cíclica del gif y su
-            constante repetición sin la posibilidad de play ni pausa, lo
-            convierte en una serpiente de pixeles que muerde su cola una y otra
-            vez.
+            El delirio se manifiesta como un medio de resistencia ante las
+            imposiciones de la lógica y la racionalidad socialmente aceptadas.
+            El resultado es la creación de realidades alternas: bifurcaciones y
+            oposiciones que nos recuerdan que aquello que damos por sentado, por
+            verdadero o inamovible es flexible, cuestionable y sustituible.
           </Typography>
         </Paper>
       </Box>
