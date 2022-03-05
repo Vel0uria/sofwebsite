@@ -20,7 +20,8 @@ const useStyles = makeStyles({
   root: {
     display: "flex",
     flexFlow: "column nowrap",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: 150
   }
 })
 function Gifs() {
@@ -28,9 +29,7 @@ function Gifs() {
   const Aleph = () => {
     return (
       <Box sx={{ textAlign: "left" }}>
-        <Typography align="center" variant="h6">
-          Aleph
-        </Typography>
+        <Typography variant="h6">Aleph</Typography>
         <Typography>animated GIF </Typography>
         <Typography>1000 x 750 px</Typography>
         <Typography>2020</Typography>
@@ -41,9 +40,7 @@ function Gifs() {
   const Retorno = () => {
     return (
       <Box sx={{ textAlign: "left" }}>
-        <Typography align="center" variant="h6">
-          Eterno retorno
-        </Typography>
+        <Typography variant="h6">Eterno retorno</Typography>
         <Typography>animated GIF </Typography>
         <Typography>905 x 700 px</Typography>
         <Typography>2021</Typography>
@@ -54,9 +51,7 @@ function Gifs() {
   const Kukulkan = () => {
     return (
       <Box sx={{ textAlign: "left" }}>
-        <Typography align="center" variant="h6">
-          Kukulkan
-        </Typography>
+        <Typography variant="h6">Kukulkan</Typography>
         <Typography>animated GIF</Typography>
         <Typography>1000 x 1000 px</Typography>
         <Typography>2021</Typography>
@@ -67,7 +62,7 @@ function Gifs() {
   const Buro = () => {
     return (
       <Box sx={{ textAlign: "left" }}>
-        <Typography>Bodegón con esferas</Typography>
+        <Typography variant="h6">Bodegón con esferas</Typography>
         <Typography>animated GIF</Typography>
         <Typography>600 x 400 px</Typography>
         <Typography>2021</Typography>
@@ -78,9 +73,7 @@ function Gifs() {
   const Delirium = () => {
     return (
       <Box sx={{ textAlign: "left" }}>
-        <Typography align="center" variant="h6">
-          Delirium
-        </Typography>
+        <Typography variant="h6">Delirium</Typography>
         <Typography>animated GIF</Typography>
         <Typography>400 x 1050 px</Typography>
         <Typography>2020</Typography>
@@ -91,9 +84,7 @@ function Gifs() {
   const Carta = () => {
     return (
       <Box sx={{ textAlign: "left" }}>
-        <Typography align="center" variant="h6">
-          Tarot algorítmico
-        </Typography>
+        <Typography variant="h6">Tarot algorítmico</Typography>
         <Typography>animated GIF</Typography>
         <Typography>420 x 720</Typography>
         <Typography>2020</Typography>

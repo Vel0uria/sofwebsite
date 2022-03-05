@@ -94,7 +94,7 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-//PENDIENTES: Tipografía, box Works con arrowDown
+//PENDIENTES:
 
 function Home() {
   const classes = useStyles()
@@ -180,21 +180,41 @@ function Home() {
           </Typography>
         </Link>
       </Box>
+      <Box component="div" mt={5} className={classes.entelequias}>
+        <Divider color="black" />
+        <Link to="/entelequias" className={classes.textLink}>
+          <Typography
+            variant="h2"
+            align="center"
+            sx={{
+              fontWeight: "bold",
+              color: "grey",
+              padding: 1,
+              borderRadius: 1,
+              backgroundColor: "rgba(20,20,20,50%)"
+            }}
+          >
+            ENTELEQUIAS
+          </Typography>
+        </Link>
+      </Box>
       <Box component="div" mt={5} className={classes.orosangre}>
         <Divider color="black" />
-        <Typography
-          variant="h2"
-          align="center"
-          sx={{
-            fontWeight: "bold",
-            padding: 1,
-            borderRadius: 1,
-            color: "grey",
-            backgroundColor: "rgba(20,20,20,50%)"
-          }}
-        >
-          ORO Y SANGRE
-        </Typography>
+        <Link to="/orosangre" className={classes.textLink}>
+          <Typography
+            variant="h2"
+            align="center"
+            sx={{
+              fontWeight: "bold",
+              padding: 1,
+              borderRadius: 1,
+              color: "grey",
+              backgroundColor: "rgba(20,20,20,50%)"
+            }}
+          >
+            ORO Y SANGRE
+          </Typography>
+        </Link>
       </Box>
       <Box component="div" mt={5} className={classes.loteria}>
         <Divider color="black" />
@@ -212,22 +232,7 @@ function Home() {
           LOTERÍA
         </Typography>
       </Box>
-      <Box component="div" mt={5} className={classes.entelequias}>
-        <Divider color="black" />
-        <Typography
-          variant="h2"
-          align="center"
-          sx={{
-            fontWeight: "bold",
-            color: "grey",
-            padding: 1,
-            borderRadius: 1,
-            backgroundColor: "rgba(20,20,20,50%)"
-          }}
-        >
-          ENTELEQUIAS
-        </Typography>
-      </Box>
+
       <Box component="div" mt={5} className={classes.tarot}>
         <Divider color="black" />
         <Typography

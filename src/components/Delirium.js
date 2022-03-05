@@ -9,8 +9,8 @@ import picapiojos from "../assets/delirium/picapiojos_reduced.png"
 import delirium_t from "../assets/gifs/thumbnails/s-dialogo.png"
 import caleidociclo_t from "../assets/delirium/caleidociclo.png"
 
-//PENDIENTES: Subir video caleidociclo
-//Imágenes menos enoormes...
+//PENDIENTES
+
 const useStyles = makeStyles({
   root: {
     display: "flex",
@@ -28,8 +28,7 @@ function Delirium() {
     return (
       <Box
         sx={{
-          textAlign: "left",
-          position: "static !important"
+          textAlign: "left"
         }}
       >
         <Typography variant="h6">Psylocibe</Typography>
@@ -43,11 +42,40 @@ function Delirium() {
   const Dialogo = () => {
     return (
       <Box sx={{ textAlign: "left" }}>
-        <Typography align="center" variant="h6">
-          Diálogo entre psylocibes
-        </Typography>
+        <Typography variant="h6">Diálogo entre psylocibes</Typography>
         <Typography>digital collage</Typography>
         <Typography>1000 x 667 px</Typography>
+        <Typography>2019</Typography>
+      </Box>
+    )
+  }
+  const Delirium = () => {
+    return (
+      <Box sx={{ textAlign: "left" }}>
+        <Typography variant="h6">Delirium I</Typography>
+        <Typography>digital collage</Typography>
+        <Typography>400 x 1050 px</Typography>
+        <Typography>2019</Typography>
+      </Box>
+    )
+  }
+  const Picapiojos = () => {
+    return (
+      <Box sx={{ textAlign: "left" }}>
+        <Typography variant="h6">Plano para picapiojos</Typography>
+        <Typography>digital collage</Typography>
+        <Typography>1500 x 1500 px</Typography>
+        <Typography>2019</Typography>
+      </Box>
+    )
+  }
+
+  const Caleidociclo = () => {
+    return (
+      <Box sx={{ textAlign: "left" }}>
+        <Typography variant="h6">Caleidociclo</Typography>
+        <Typography>caleidociclo de papel</Typography>
+        <Typography>13 x 13 x 8 cm</Typography>
         <Typography>2019</Typography>
       </Box>
     )
@@ -65,6 +93,7 @@ function Delirium() {
           allowFullScreen
           title="caleidociclo"
         />
+        <Caleidociclo />
       </div>
     )
   }
@@ -83,23 +112,29 @@ function Delirium() {
       originalHeight: 702,
       description: <Dialogo />
     },
-    { original: del, thumbnail: delirium_t, originalHeight: 750 },
+    {
+      original: del,
+      thumbnail: delirium_t,
+      originalHeight: 750,
+      description: <Delirium />
+    },
     {
       original: picapiojos,
       thumbnail: picapiojos,
       originalWidth: 800,
-      originalHeight: 800
+      originalHeight: 800,
+      description: <Picapiojos />
     },
     {
       original: caleidociclo,
       thumbnail: caleidociclo_t,
       renderItem: renderVideo.bind(caleidociclo)
     }
-  ] //   embedUrl: "https://player.vimeo.com/video/317075295?h=b14298638e",
+  ]
 
   return (
     <div className={classes.root}>
-      <ImageGallery items={images} showPlayButton={false} showNav={false} />
+      <ImageGallery items={images} showPlayButton={false} />
 
       <Box
         sx={{
