@@ -1,6 +1,14 @@
 import React from "react"
 import { Box, Typography, Paper } from "@mui/material"
 import { makeStyles } from "@mui/styles"
+import ImageGallery from "react-image-gallery"
+import vertical from "../assets/orosangre/vertical.png"
+import horizontal from "../assets/orosangre/project-v.png"
+import framed from "../assets/orosangre/framed.jpg"
+import framed_1 from "../assets/orosangre/framed-1.png"
+import cirio from "../assets/orosangre/oro-sangre-pic.jpg"
+import cirio_1 from "../assets/orosangre/opcion_2.png"
+
 const useStyles = makeStyles({
   root: {
     display: "flex",
@@ -8,18 +16,54 @@ const useStyles = makeStyles({
     alignItems: "center",
     marginTop: 150
     //  paddingTop: 10
+  },
+  vertical: {
+    maxHeight: 900,
+    maxWidth: 500,
+    padding: 10,
+    borderRadius: 5
+  },
+  images: {
+    maxWidth: 1000,
+
+    "& img": {
+      borderRadius: 7
+    }
   }
 })
 function OroSangre() {
   const classes = useStyles()
+  const images = [
+    {
+      original: horizontal,
+      thumbnail: horizontal,
+      originalClass: classes.images
+    },
+    { original: framed, thumbnail: framed, originalClass: classes.images },
+    { original: framed_1, thumbnail: framed_1, originalClass: classes.images }
+  ]
+
+  const images_1 = [
+    {
+      original: cirio,
+      thumbnail: cirio
+    },
+    {
+      original: cirio_1,
+      thumbnail: cirio_1
+    }
+  ]
   return (
     <div className={classes.root}>
       <Box
         sx={{
-          margin: 2,
-          maxWidth: 1200
+          maxWidth: 1200,
+          display: "flex",
+          flexFlow: "column wrap",
+          alignItems: "center"
         }}
       >
+        <img src={vertical} alt="vertical" className={classes.vertical} />
         <Paper
           elevation={3}
           sx={{
@@ -47,6 +91,8 @@ function OroSangre() {
           </Typography>
         </Paper>
       </Box>
+      <ImageGallery items={images} showPlayButton={false} />
+      <ImageGallery items={images_1} showPlayButton={false} />
     </div>
   )
 }
