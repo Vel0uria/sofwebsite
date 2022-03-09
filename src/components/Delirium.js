@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Typography, Paper } from "@mui/material"
+import { Box, Typography, Paper, Divider } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import ImageGallery from "react-image-gallery"
 import dialogo from "../assets/delirium/dialogo.jpg"
@@ -11,15 +11,27 @@ import caleidociclo_t from "../assets/delirium/caleidociclo.png"
 
 //PENDIENTES
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flexFlow: "column nowrap",
     alignItems: "center",
-    marginTop: 150
-    //  paddingTop: 10
+    marginTop: 100,
+    [theme.breakpoints.down("md")]: {
+      flexFlow: "column wrap",
+      marginTop: 115,
+      "& h2": {
+        fontSize: 48
+      },
+      "& h6": {
+        fontSize: 14
+      },
+      "& p": {
+        fontSize: 12
+      }
+    }
   }
-})
+}))
 function Delirium() {
   const classes = useStyles()
   const caleidociclo = "https://player.vimeo.com/video/317075295?h=b14298638e"
@@ -86,7 +98,7 @@ function Delirium() {
       <div>
         <iframe
           src="https://player.vimeo.com/video/317075295?h=b14298638e"
-          width="640"
+          width="300"
           height="564"
           frameBorder="0"
           allow="autoplay; fullscreen"
@@ -101,41 +113,57 @@ function Delirium() {
     {
       original: psylocibe,
       thumbnail: psylocibe,
-      originalWidth: 950,
-      originalHeight: 602,
+      //  originalWidth: 950,
+      //  originalHeight: 602,
       description: <Psylocibe />
     },
     {
       original: dialogo,
       thumbnail: dialogo,
-      originalWidth: 950,
-      originalHeight: 702,
+      // originalWidth: 950,
+      // originalHeight: 702,
       description: <Dialogo />
     },
     {
       original: del,
       thumbnail: delirium_t,
-      originalHeight: 750,
+      //  originalHeight: 750,
       description: <Delirium />
     },
     {
       original: picapiojos,
       thumbnail: picapiojos,
-      originalWidth: 800,
-      originalHeight: 800,
+      // originalWidth: 800,
+      // originalHeight: 800,
       description: <Picapiojos />
     },
     {
       original: caleidociclo,
       thumbnail: caleidociclo_t,
+      // originalHeight: 564,
+      //  originalWidth: 640,
       renderItem: renderVideo.bind(caleidociclo)
     }
   ]
 
   return (
     <div className={classes.root}>
-      <ImageGallery items={images} showPlayButton={false} />
-
+      <Box
+        sx={{
+          alignSelf: "flex-start",
+          p: 4,
+          color: "#2b885d",
+          minWidth: window.innerWidth - 300
+        }}
+      >
+        <Typography variant="h1" component="h2">
+          Delirium
+        </Typography>
+        <Divider color="#313131" variant="fullWidth" textAlign="left" />
+      </Box>
+      <Box>
+        <ImageGallery items={images} showPlayButton={false} />
+      </Box>
       <Box
         sx={{
           // display: "flex",

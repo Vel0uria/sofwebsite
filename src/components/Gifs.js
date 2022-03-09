@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Typography, Paper } from "@mui/material"
+import { Box, Typography, Paper, Divider } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import ImageGallery from "react-image-gallery"
 import aleph_t from "../assets/gifs/thumbnails/aleph_t.png"
@@ -16,14 +16,27 @@ import kukulkan from "../assets/gifs/q_3_v2.gif"
 import buro from "../assets/gifs/buro.gif"
 
 //PENDIENTE: texto descriptivo, link a HEN.
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flexFlow: "column nowrap",
     alignItems: "center",
-    marginTop: 150
+    marginTop: 100,
+    [theme.breakpoints.down("md")]: {
+      flexFlow: "column wrap",
+      marginTop: 115,
+      "& h2": {
+        fontSize: 48
+      },
+      "& h6": {
+        fontSize: 16
+      },
+      "& p": {
+        fontSize: 14
+      }
+    }
   }
-})
+}))
 function Gifs() {
   const classes = useStyles()
   const Aleph = () => {
@@ -107,6 +120,20 @@ function Gifs() {
 
   return (
     <div className={classes.root}>
+      <Box
+        sx={{
+          alignSelf: "flex-start",
+          p: 4,
+          color: "#2b885d",
+          minWidth: window.innerWidth - 300
+        } //  pr: 1, // ml: 4, //  mb: 4,
+        }
+      >
+        <Typography variant="h1" component="h2">
+          Gifs
+        </Typography>
+        <Divider color="#313131" variant="fullWidth" textAlign="left" />
+      </Box>
       <Box>
         <ImageGallery items={images} showPlayButton={false} />
       </Box>

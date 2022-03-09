@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Typography, Paper } from "@mui/material"
+import { Box, Typography, Paper, Divider } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import ImageGallery from "react-image-gallery"
 import vertical from "../assets/orosangre/vertical.png"
@@ -14,8 +14,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexFlow: "column nowrap",
     alignItems: "center",
-    marginTop: 150
-    //  paddingTop: 10
+    marginTop: 60
   },
   vertical: {
     maxHeight: 900,
@@ -33,6 +32,7 @@ const useStyles = makeStyles({
 })
 function OroSangre() {
   const classes = useStyles()
+  const cirio_video = "https://vimeo.com/317075295"
   const images = [
     {
       original: horizontal,
@@ -51,26 +51,61 @@ function OroSangre() {
     {
       original: cirio_1,
       thumbnail: cirio_1
+    },
+    {
+      original: cirio,
+      thumbnail: cirio,
+      renderItem: renderVideo.bind(cirio_video)
     }
   ]
+
+  function renderVideo() {
+    return (
+      <div>
+        <iframe
+          src="https://player.vimeo.com/video/684872911?h=57f4a350af"
+          width="300"
+          height="564"
+          frameBorder="0"
+          allow="autoplay; fullscreen"
+          allowFullScreen
+          title="caleidociclo"
+        />
+      </div>
+    )
+  }
   return (
     <div className={classes.root}>
       <Box
         sx={{
+          alignSelf: "flex-start",
+          p: 4,
+          color: "#2b885d",
+          minWidth: window.innerWidth - 300
+        }}
+      >
+        <Typography variant="h1" component="h2">
+          Oro y sangre
+        </Typography>
+        <Divider color="#313131" variant="fullWidth" textAlign="left" />
+      </Box>
+      <Box
+        sx={{
           maxWidth: 1200,
           display: "flex",
-          flexFlow: "column wrap",
+          flexFlow: "column nowrap",
+          // alignSelf: "center",
+          // paddingLeft: 3
           alignItems: "center"
+          //paddingLeft: 15
         }}
       >
         <img src={vertical} alt="vertical" className={classes.vertical} />
         <Paper
-          elevation={3}
+          // elevation={3}
           sx={{
             backgroundColor: "black",
-            padding: 2,
-            display: "flex",
-            justifyContent: "center"
+            padding: 2
           }}
         >
           <Typography variant="h6" align="justify" color="white">
