@@ -6,9 +6,10 @@ import vertical from "../assets/orosangre/vertical.png"
 import horizontal from "../assets/orosangre/project-v.png"
 import framed from "../assets/orosangre/framed.jpg"
 import framed_1 from "../assets/orosangre/framed-1.png"
-import cirio from "../assets/orosangre/oro-sangre-pic.jpg"
-import cirio_1 from "../assets/orosangre/opcion_2.png"
-
+import cirio from "../assets/orosangre/cirio-impresion-1.png"
+import cirio_1 from "../assets/orosangre/oro-sangre-pic.jpg"
+import cirio_reflejo from "../assets/orosangre/cirio_reflejo.jpg"
+import { maxHeight } from "@mui/system"
 const useStyles = makeStyles({
   root: {
     display: "flex",
@@ -28,11 +29,25 @@ const useStyles = makeStyles({
     "& img": {
       borderRadius: 7
     }
+  },
+  galleries: {
+    padding: 10
   }
 })
 function OroSangre() {
   const classes = useStyles()
   const cirio_video = "https://vimeo.com/317075295"
+  const Horizontal = () => {
+    return (
+      <Box sx={{ textAlign: "left" }}>
+        <Typography variant="h6">Oro y sangre II</Typography>
+        <Typography>digital graphic</Typography>
+        <Typography>43 x 36 cm</Typography>
+        <Typography>2021</Typography>
+      </Box>
+    )
+  }
+
   const images = [
     {
       original: horizontal,
@@ -46,16 +61,17 @@ function OroSangre() {
   const images_1 = [
     {
       original: cirio,
-      thumbnail: cirio
-    },
-    {
-      original: cirio_1,
-      thumbnail: cirio_1
-    },
-    {
-      original: cirio,
       thumbnail: cirio,
+      originalHeight: 900,
+      originalWidth: 770
+      //   originalClass: classes.galleries
+    },
+    { original: cirio_1, thumbnail: cirio_1, originalClass: classes.galleries },
+    {
+      original: cirio_reflejo,
+      thumbnail: cirio_reflejo,
       renderItem: renderVideo.bind(cirio_video)
+      //   originalClass: classes.galleries
     }
   ]
 
@@ -80,7 +96,7 @@ function OroSangre() {
         sx={{
           alignSelf: "flex-start",
           p: 4,
-          color: "#2b885d",
+          color: "goldenrod",
           minWidth: window.innerWidth - 300
         }}
       >
@@ -94,19 +110,15 @@ function OroSangre() {
           maxWidth: 1200,
           display: "flex",
           flexFlow: "column nowrap",
-          // alignSelf: "center",
-          // paddingLeft: 3
           alignItems: "center"
-          //paddingLeft: 15
-        }}
+        } // paddingLeft: 3 // alignSelf: "center",
+        //paddingLeft: 15
+        }
       >
         <img src={vertical} alt="vertical" className={classes.vertical} />
         <Paper
-          // elevation={3}
-          sx={{
-            backgroundColor: "black",
-            padding: 2
-          }}
+          sx={{ backgroundColor: "black", padding: 2 } // elevation={3}
+          }
         >
           <Typography variant="h6" align="justify" color="white">
             Serie de obras que hacen homenaje a la Tierra a partir de los
@@ -126,8 +138,20 @@ function OroSangre() {
           </Typography>
         </Paper>
       </Box>
-      <ImageGallery items={images} showPlayButton={false} />
-      <ImageGallery items={images_1} showPlayButton={false} />
+      <Box component="div">
+        <Box p={5}>
+          <Typography pb={4} variant="h3" color="goldenrod">
+            Oro y sangre - versión horizontal
+          </Typography>
+          <ImageGallery items={images} showPlayButton={false} />
+        </Box>
+        <Box p={5}>
+          <Typography pb={4} variant="h3" color="goldenrod">
+            Oro y sangre - versión cirio
+          </Typography>
+          <ImageGallery items={images_1} showPlayButton={false} />
+        </Box>
+      </Box>
     </div>
   )
 }
