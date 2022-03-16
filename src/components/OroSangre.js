@@ -3,13 +3,13 @@ import { Box, Typography, Paper, Divider } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import ImageGallery from "react-image-gallery"
 import vertical from "../assets/orosangre/vertical.png"
-import horizontal from "../assets/orosangre/project-v.png"
+import horizontal from "../assets/orosangre/project-v.jpg"
 import framed from "../assets/orosangre/framed.jpg"
 import framed_1 from "../assets/orosangre/framed-1.png"
-import cirio from "../assets/orosangre/cirio-impresion-1.png"
+import cirio from "../assets/orosangre/cirio.png"
 import cirio_1 from "../assets/orosangre/oro-sangre-pic.jpg"
 import cirio_reflejo from "../assets/orosangre/cirio_reflejo.jpg"
-import { maxHeight } from "@mui/system"
+
 const useStyles = makeStyles({
   root: {
     display: "flex",
@@ -30,8 +30,12 @@ const useStyles = makeStyles({
       borderRadius: 7
     }
   },
-  galleries: {
-    padding: 10
+  description: {
+    textAlign: "left"
+    // display: "flex",
+    // flexFlow: "column wrap",
+    // alignSelf: "flex-end",
+    // justifyContent: "flex-end",
   }
 })
 function OroSangre() {
@@ -39,7 +43,7 @@ function OroSangre() {
   const cirio_video = "https://vimeo.com/317075295"
   const Horizontal = () => {
     return (
-      <Box sx={{ textAlign: "left" }}>
+      <Box className={classes.description}>
         <Typography variant="h6">Oro y sangre II</Typography>
         <Typography>digital graphic</Typography>
         <Typography>43 x 36 cm</Typography>
@@ -52,7 +56,8 @@ function OroSangre() {
     {
       original: horizontal,
       thumbnail: horizontal,
-      originalClass: classes.images
+      originalClass: classes.images,
+      description: <Horizontal />
     },
     { original: framed, thumbnail: framed, originalClass: classes.images },
     { original: framed_1, thumbnail: framed_1, originalClass: classes.images }
@@ -63,17 +68,18 @@ function OroSangre() {
       original: cirio,
       thumbnail: cirio,
       originalHeight: 900,
-      originalWidth: 770
-      //   originalClass: classes.galleries
+      originalWidth: 770,
+      description: <Horizontal />
     },
     { original: cirio_1, thumbnail: cirio_1, originalClass: classes.galleries },
     {
       original: cirio_reflejo,
       thumbnail: cirio_reflejo,
       renderItem: renderVideo.bind(cirio_video)
-      //   originalClass: classes.galleries
     }
   ]
+  //   originalClass: classes.galleries
+  //   originalClass: classes.galleries
 
   function renderVideo() {
     return (
